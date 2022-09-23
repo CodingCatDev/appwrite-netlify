@@ -2,6 +2,28 @@ query ExampleQuery @netlify(id: null, doc: null) {
   __typename
 }
 
+query SpotifyAboutMeQuery @netlify(id: """7892621e-ff5f-434c-aa81-2f3ad1c8bc07""", doc: """
+Find the currently logged-in Spotify user's email, name, profile image, etc.
+""") {
+  me {
+    spotify {
+      country
+      displayName
+      email
+      href
+      id
+      images {
+        height
+        url
+        width
+      }
+      product
+      type
+      uri
+    }
+  }
+}
+
 query SpotifyAboutMeQuery @netlify(id: """bf793fac-905c-4a83-8fb6-6748ba25f91b""", doc: """
 Find the currently logged-in Spotify user's email, name, profile image, etc.
 """) {
@@ -20,6 +42,30 @@ Find the currently logged-in Spotify user's email, name, profile image, etc.
       product
       type
       uri
+    }
+  }
+}
+
+query SpotifySearchTracks($query: String!) @netlify(id: """3bae5ae0-eabe-4b89-8e0c-9c0db5581dd0""", doc: """
+Search for matching Spotify tracks. Note you can edit this query to also search for artists
+""") {
+  spotify {
+    search(data: {query: $query}) {
+      tracks {
+        name
+        id
+        href
+        album {
+          name
+          id
+          href
+          images {
+            height
+            url
+            width
+          }
+        }
+      }
     }
   }
 }
