@@ -1,2 +1,9 @@
+[build]
+  command = "next build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [graph]
   codeGenerator = "netlify-builtin:nextjs"
