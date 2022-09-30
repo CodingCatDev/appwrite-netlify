@@ -24,6 +24,28 @@ Find the currently logged-in Spotify user's email, name, profile image, etc.
   }
 }
 
+query SpotifyAboutMeQuery @netlify(id: """99ce51c2-50dd-47e6-8bad-c494483547bd""", doc: """
+Find the currently logged-in Spotify user's email, name, profile image, etc.
+""") {
+  me {
+    spotify {
+      country
+      displayName
+      email
+      href
+      id
+      images {
+        height
+        url
+        width
+      }
+      product
+      type
+      uri
+    }
+  }
+}
+
 query SpotifyAboutMeQuery @netlify(id: """bf793fac-905c-4a83-8fb6-6748ba25f91b""", doc: """
 Find the currently logged-in Spotify user's email, name, profile image, etc.
 """) {
