@@ -6,7 +6,7 @@ exports.handler = async (req, res) => {
   let accessToken = null;
 
   //// If you want to use the client's accessToken when making API calls on the user's behalf:
-  // accessToken = req.headers["authorization"]?.split(" ")[1];
+  accessToken = req.headers["authorization"]?.split(" ")[1];
 
   //// If you want to use the API with your own access token:
   // accessToken = process.env.NETLIFY_GRAPH_TOKEN;

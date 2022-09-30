@@ -2424,6 +2424,12 @@ type NetlifyGraphHelloGraph {
   whatToDoNext: JSON!
 }
 
+input OneGraphServiceDiscoveryListMongoDBAppsInput {
+  groupId: String!
+  apiKey: String!
+  publicKey: String!
+}
+
 input OneGraphServiceDiscoveryListDataStaxDBsInput {
   applicationToken: String!
 }
@@ -6647,6 +6653,7 @@ type OneGraphServiceQuery {
   faunaDBs: OneGraphServiceDiscoveryUserinfoPayload!
   listContentfulSpaces: OneGraphServiceDiscoveryUserinfoPayload!
   listDataStaxDatabases(input: OneGraphServiceDiscoveryListDataStaxDBsInput!): OneGraphServiceDiscoveryUserinfoPayload!
+  listMongoDBAtlasApps(input: OneGraphServiceDiscoveryListMongoDBAppsInput!): OneGraphServiceDiscoveryUserinfoPayload!
 }
 
 input SpotifyRecommendationsFilterIntTargetArg {
